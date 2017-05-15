@@ -28,7 +28,8 @@ The simulator can be downloaded from the classroom. In the classroom, we have al
 1. Activate the carnd-term1 environment
 2. Ensure you have Keras version 2.0.2. if not run 
 
-```conda install -c conda-forge keras=2.0.2
+```
+conda install -c conda-forge keras=2.0.2
 ```
 3. Run 
 ```
@@ -40,12 +41,15 @@ python drive.py model.h5
 1. Collect data from the udacity simulater by driving the car around
 2. Keep the data collected in a folder called data
 3. Run model.py by typing 
-```python model.py
+```
+python model.py
 ```
 
 model.py expects to find images in `data/IMG` and csv file in `data/`
 
 ### Issues
 In case while training the model uses Theano backend run with following command 
-```KERAS_BACKEND=tensorflow python model.py
-KERAS_BACKEND=tensorflow drive.py model.h5```
+```
+KERAS_BACKEND=tensorflow python model.py
+KERAS_BACKEND=tensorflow drive.py model.h5
+```
