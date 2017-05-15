@@ -79,7 +79,7 @@ In order to collect the data to train the network Udacity's simulator was used. 
    4. The number of batches that can be genrated from this technique is calculated.
 
 
-![alt-text]('./examples/prep1.png')
+![alt-text]('examples/prep1.png')
 
 - **Training and Validation Split**
     - The data captured from the simulator was split into training(80&) and validation(20%) sets. This was done after the number of pictures with steering angle = 0 was lowered.
