@@ -77,12 +77,19 @@ In order to collect the data to train the network Udacity's simulator was used. 
    2. The training data is first shuffled 
    3. Then the data is then looped over by choosing 24 times the outputted batch size and       these images are read from the disk and augmented randomly with a bias towards flipping the image and then shuffled and then 128 images are outputted from this pool of augmented data in order to introduce further randomness in the set of augmented images
    4. The number of batches that can be genrated from this technique is calculated.
-
-
-![alt-text]('examples/prep1.png')
-
+   
 - **Training and Validation Split**
     - The data captured from the simulator was split into training(80&) and validation(20%) sets. This was done after the number of pictures with steering angle = 0 was lowered.
+ 
+![](examples/prep1.png)
+![](examples/prep2.png)
+![](examples/prep3.png)
+![](examples/prep4.png)
+![](examples/prep5.png)
+![](examples/prep6.png)
+![](examples/prep7.png)
+![](examples/prep8.png)
+
 
 ##### 4. Training the model
 Adam optimizer was used to train the model with a learnrate 0.001. Dropout layers were added to the model during training  to reduce overfitting. L2 regularization was added to the fully connected layers but it didnt show any significant improvement. The model was trained on the augmented set 667 batches with each batch comprising of 128 images each and fit_generator function of keras was used to accomplish the task. After training the model was saved. 
@@ -93,11 +100,10 @@ The train model was correctly able to predict the steering angles on Track 1 and
 
 ---
 ### References
-1. 
-2. 
-3. 
-4. 
-
+1. [An augmentation based deep neural network approach to learn human driving behavior](https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9)
+2. [Stack Overflow](http://stackoverflow.com/)
+3. [Building powerful image classification models using very little data](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html)
+4. [End-to-End Deep Learning for Self-Driving Cars](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/)
 
 
 
