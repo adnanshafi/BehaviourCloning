@@ -41,8 +41,8 @@ for line in data_without_headers:
 # Helper functions to augment the images
 def add_random_shadow(image, y):
     """
-    Helper function to add random shadow to the image
-
+    Helper function to add random shadow to the image.
+	https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9
     Args :
         image: The input image
         y : The steering angle
