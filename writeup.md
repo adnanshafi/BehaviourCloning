@@ -50,7 +50,36 @@ python drive.py model.h5
 
 ##### 1. Model Architecture
 
-The model used in this project is based on the paper published by NVIDIA which tackles the same problem of predicting steering angles based on the images captured by a camera mounted on the car. The model consists of 5 convolutional layers followed by three fully connected layers which output to a single neuron which predicts the steering angle. At first a modified LeNet architecture was used which was able to predict the steering angles correctly on Track 1 and most of Track 2. The NVIDIA architecture was later chosen because it has been proven to work in real world. 
+The model used in this project is based on the paper published by NVIDIA which tackles the same problem of predicting steering angles based on the images captured by a camera mounted on the car. The model consists of 5 convolutional layers followed by three fully connected layers which output to a single neuron which predicts the steering angle. At first a modified LeNet architecture was used which was able to predict the steering angles correctly on Track 1 and most of Track 2. The NVIDIA architecture was later chosen because it has been proven to work in real world.
+
+The model consists of:
+
+  1. An input layer which takes an image of dimensions 160 x 200 x 3 (h x w x ch) 
+  2. A Cropping layer where the image gets cropped to 66 x 200 x 3. The bottom 25 pixels consisting of the hood of the car and the top 69 pixels consisting of surroundings are cropped off. 
+  3. A Lambda layer where the pixel values are normalized to 0 mean and max absolute value of 0.5.
+  4. A Convolutional layer with kernel size of 5x5 and strides of 2 with 24 filters. Its output dimensions are (31 x 98 x 24).
+  5. A RELU activation layer. 
+  6. A Convolutional layer with kernel size of 5x5 and strides of 2 with 36 filters. Its output dimensions are (14 x 47 x 36).
+  7. A RELU activation layer. 
+  8. A Convolutional layer with kernel size of 5x5 and strides of 2 with 48 filters. Its output dimensions are (5 x 22 x 48).
+  9. A RELU activation layer. 
+  10. A Convolutional layer with kernel size of 3x3 and strides of 1 with 64 filters. Its output dimensions are (3 x 20 x 64).
+  11. A RELU activation layer. 
+  12. A Convolutional layer with kernel size of 3x3 and strides of 1 with 64 filters. Its output dimensions are (1 x 18 x 64).
+  13. A RELU activation layer. 
+  14. The model is then flattened with 1152 neurons. 
+  15. A fully connected layer with 100 neurons.
+  16. A RELU Activation layer.
+  17. A fully connected layer with 50 neurons.
+  18. A RELU Activation layer.
+  19. A fully connected layer with 10 neurons.
+  20. A RELU Activation layer.
+  21. A single neuron which outputs the steering prediction.
+
+  During Training dropout is done on the fully connected layers to reduce overfitting with keep probablility of 0.5. 
+
+  ![](examples/model.png)
+
 
 ##### 2. Collecting the training data:
 In order to collect the data to train the network Udacity's simulator was used. The car in the simulator has three cameras mounted on it, one in the centre of the car above the hood and two cameras on each side of the car. The car was driven on the tracks provided on the simulator and images and steering data were recorded. 
