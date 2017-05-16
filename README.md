@@ -51,3 +51,5 @@ In case while training the model uses Theano backend run with following command
 KERAS_BACKEND=tensorflow python model.py
 KERAS_BACKEND=tensorflow drive.py model.h5
 ```
+### The Model Architecture
+[The model architecture can be found here](writeup.md)
